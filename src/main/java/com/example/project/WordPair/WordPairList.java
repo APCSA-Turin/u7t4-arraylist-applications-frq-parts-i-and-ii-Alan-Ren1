@@ -5,23 +5,33 @@ import java.util.ArrayList;
 public class WordPairList {
     private ArrayList<WordPair> allPairs;
 
+    // Constructor that generates all unique pairs
     public WordPairList(String[] words) {
-        /* to be implemented in part (a) */
+        allPairs = new ArrayList<>();
+        for (int i = 0; i < words.length - 1; i++) {
+            for (int j = i + 1; j < words.length; j++) {
+                allPairs.add(new WordPair(words[i], words[j]));
+            }
+        }
     }
 
-    // The method below was added for testing;
-    // it was not part of the original FRQ
+    // Method to return the list of all word pairs
     public ArrayList<WordPair> getAllPairs() {
         return allPairs;
     }
 
+    // Counts the number of word pairs where the first and second word are the same
     public int numMatches() {
-        /* to be implemented in part (b) */
-        return 0;
+        int count = 0;
+        for (WordPair pair : allPairs) {
+            if (pair.getFirst().equals(pair.getSecond())) {
+                count++;
+            }
+        }
+        return count;
     }
 
-    // The method below was added for testing;
-    // it was not part of the original FRQ
+    // String representation for testing purposes
     public String toString() {
         return allPairs.toString();
     }

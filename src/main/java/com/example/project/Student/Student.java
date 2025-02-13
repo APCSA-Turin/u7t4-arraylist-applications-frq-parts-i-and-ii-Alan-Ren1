@@ -1,6 +1,5 @@
 package com.example.project.Student;
 
-
 public class Student {
     private String firstName;
     private String lastName;
@@ -12,19 +11,15 @@ public class Student {
         this.gpa = gpa;
     }
 
+    public double getGPA() { // Ensure this method exists
+        return gpa;
+    }
+
     public String getFirstName() {
         return firstName;
     }
 
     public String getLastName() {
         return lastName;
-    }
-
-    public double getGpa() {
-        return gpa;
-    }
-
-    public String toString() {
-        return firstName + " " + lastName + ": " + gpa;
     }
 }

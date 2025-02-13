@@ -33,4 +33,9 @@ public class Flight {
     public String toString() {
         return "passengers: " + numPassengers;
     }
+
+
+    public double getTicketPrice() {  
+        return price;
+    }
 }
